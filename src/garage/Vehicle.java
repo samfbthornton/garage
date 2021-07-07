@@ -4,28 +4,28 @@ public abstract class Vehicle {
 
 	private String name;
 	private int numberOfWheels;
-	private boolean fixed;
+	private boolean roof;
 
-	public Vehicle(String name, int numberOfWheels, boolean fixed) {
+	public Vehicle(String name, int numberOfWheels, boolean roof) {
 		this.name = name;
 		this.numberOfWheels = numberOfWheels;
-		this.fixed = fixed;
+		this.roof = roof;
 	}
 
 	public Vehicle() {
 	}
 
-	public abstract int invoice();
+	public abstract int Fix();
 
 	public void Print() {
 		System.out.print("Vehicle: ");
 		System.out.println(this.getName());
 		System.out.print("Number of Wheels: ");
 		System.out.println(this.getNumberOfWheels());
-		System.out.print("Fixed?: ");
-		System.out.println(this.isFixed());
+		System.out.print("Roof?: ");
+		System.out.println(this.isRoof());
 		System.out.print("Invoice cost: £");
-		System.out.println(this.invoice());
+		System.out.println(this.Fix());
 		System.out.println("----------------");
 	}
 
@@ -45,12 +45,12 @@ public abstract class Vehicle {
 		this.numberOfWheels = numberOfWheels;
 	}
 
-	public boolean isFixed() {
-		return fixed;
+	public boolean isRoof() {
+		return roof;
 	}
 
-	public void setFixed(boolean fixed) {
-		this.fixed = fixed;
+	public void setRoof(boolean roof) {
+		this.roof = roof;
 	}
 
 }

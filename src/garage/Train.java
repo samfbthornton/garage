@@ -10,8 +10,8 @@ public class Train extends Vehicle {
 
 	}
 
-	public Train(String name, int numberOfWheels, boolean fixed, String tubeLine, int numberOfCars) {
-		super(name, numberOfWheels, fixed);
+	public Train(String name, int numberOfWheels, boolean roof, String tubeLine, int numberOfCars) {
+		super(name, numberOfWheels, roof);
 		this.tubeLine = tubeLine;
 		this.numberOfCars = numberOfCars;
 	}
@@ -22,18 +22,19 @@ public class Train extends Vehicle {
 		System.out.println(this.getName());
 		System.out.print("Number of Wheels: ");
 		System.out.println(this.getNumberOfWheels());
-		System.out.print("Fixed?: ");
-		System.out.println(this.isFixed());
+		System.out.print("Roof?: ");
+		System.out.println(this.isRoof());
 		System.out.print("Tubeline: ");
 		System.out.println(this.getTubeLine());
 		System.out.print("Number of Cars: ");
 		System.out.println(this.getNumberOfCars());
 		System.out.print("Invoice cost: £");
-		System.out.println(this.invoice());
+		System.out.println(this.Fix());
+		System.out.println("----------------------");
 	}
 
 	@Override
-	public int invoice() {
+	public int Fix() {
 		int invoice = getNumberOfCars() * 100;
 		return invoice;
 	}

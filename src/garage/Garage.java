@@ -31,10 +31,34 @@ public class Garage {
 		return null;
 	}
 
+	public void removeVehicleByType(String name) {
+		System.out.println("Removing " + name);
+
+		for (Vehicle vehicle : vehicles) {
+			if (vehicle.getClass().getSimpleName().equals(name))
+				vehicles.remove(vehicle);
+
+		}
+	}
+
+	public void removeAllVehicles() {
+		System.out.println("Uh oh, there's nothing here!");
+		vehicles.clear();
+
+	}
+
+	public int fixVehicles() {
+		int price = 0;
+		for (Vehicle v : this.vehicles) {
+			price += v.Fix();
+		}
+		return price;
+	}
+
 	public void print() {
 		// System.out.print("Mechanic: ");
 		// System.out.print(this.getMechanic());
-		System.out.println("Vehicle: [");
+		System.out.println("Vehicles: [");
 		for (Vehicle v : this.vehicles) {
 			v.Print();
 		}
@@ -47,5 +71,13 @@ public class Garage {
 
 	public void setMechanic(String mechanic) {
 		this.mechanic = mechanic;
+	}
+
+	public ArrayList<Vehicle> getVehicles() {
+		return vehicles;
+	}
+
+	public void setVehicles(ArrayList<Vehicle> vehicles) {
+		this.vehicles = vehicles;
 	}
 }

@@ -9,8 +9,8 @@ public class Helicopter extends Vehicle {
 
 	}
 
-	public Helicopter(String name, int numberOfWheels, boolean fixed, int numberOfBlades, boolean canFly) {
-		super(name, numberOfWheels, fixed);
+	public Helicopter(String name, int numberOfWheels, boolean roof, int numberOfBlades, boolean canFly) {
+		super(name, numberOfWheels, roof);
 		this.numberOfBlades = numberOfBlades;
 		this.canFly = canFly;
 	}
@@ -21,18 +21,19 @@ public class Helicopter extends Vehicle {
 		System.out.println(this.getName());
 		System.out.print("Number of Wheels: ");
 		System.out.println(this.getNumberOfWheels());
-		System.out.print("Fixed?: ");
-		System.out.println(this.isFixed());
+		System.out.print("Roof?: ");
+		System.out.println(this.isRoof());
 		System.out.print("Number of Blades: ");
 		System.out.println(this.getNumberOfBlades());
 		System.out.print("Can it Fly? ");
 		System.out.println(this.isCanFly());
 		System.out.print("Invoice cost: £");
-		System.out.println(this.invoice());
+		System.out.println(this.Fix());
+		System.out.println("----------------------");
 	}
 
 	@Override
-	public int invoice() {
+	public int Fix() {
 		int invoice = getNumberOfBlades() * 100;
 		return invoice;
 	}
