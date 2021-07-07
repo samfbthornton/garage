@@ -31,13 +31,14 @@ public class Garage {
 		return null;
 	}
 
+//only removing one type, not all
 	public void removeVehicleByType(String name) {
 		System.out.println("Removing " + name);
 
 		for (Vehicle vehicle : vehicles) {
-			if (vehicle.getClass().getSimpleName().equals(name))
+			if (vehicle.getClass().getSimpleName().equals(name)) {
 				vehicles.remove(vehicle);
-
+			}
 		}
 	}
 
